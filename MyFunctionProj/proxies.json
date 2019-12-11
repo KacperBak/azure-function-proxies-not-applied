@@ -14,10 +14,44 @@
     },
     "root redirect": {
       "matchCondition": {
-          "methods": [ "GET" ],
-          "route": "/"
+        "methods": [
+          "GET"
+        ],
+        "route": "/"
       },
-      "backendUri": "http://localhost:7071"
-  }
+      "responseOverrides": {
+        "response.statusCode": "444"
+      }
+    },
+    "ok redirect": {
+      "matchCondition": {
+        "methods": [
+          "GET"
+        ],
+        "route": "/ok"
+      },
+      "backendUri": "http://localhost:7071/Ok"
+    },
+    "spring 1 redirect": {
+      "matchCondition": {
+        "methods": [
+          "GET"
+        ],
+        "route": "/spring1"
+      },
+      "backendUri": "http://localhost:8080/greeting"
+    },
+    "spring 2 redirect": {
+      "matchCondition": {
+        "methods": [
+          "GET"
+        ],
+        "route": "/spring2"
+      },
+      "responseOverrides": {
+        "response.statusCode": "301",
+        "response.headers.Location": "http://localhost:8080/greeting"
+      }
+    }
   }
 }
