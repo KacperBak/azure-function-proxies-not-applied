@@ -1,0 +1,28 @@
+{
+  "proxies": {
+    "permanent redirect": {
+      "matchCondition": {
+        "methods": [
+          "GET"
+        ],
+        "route": "/permanent"
+      },
+      "responseOverrides": {
+        "response.statusCode": "301",
+        "response.headers.Location": "https://docs.microsoft.com/"
+      }
+    },
+    "temporary redirect": {
+      "matchCondition": {
+        "methods": [
+          "GET"
+        ],
+        "route": "/temporary"
+      },
+      "responseOverrides": {
+        "response.statusCode": "302",
+        "response.headers.Location": "https://dosc.microsoft.com/"
+      }
+    }
+  }
+}

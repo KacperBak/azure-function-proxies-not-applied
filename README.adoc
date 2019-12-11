@@ -1,0 +1,53 @@
+= README
+
+== Sources
+This project has been setuped with the following guide: https://docs.microsoft.com/en-us/azure/azure-functions/functions-create-function-linux-custom-image?tabs=nodejs[Create a function on Linux using a custom image]
+
+The `proxies.json` has been copied from https://docs.microsoft.com/en-us/sandbox/functions-recipes/proxies[here].
+
+== Expected redirects
+http://localhost:7071/permanent -> HTTP 301 
+
+== Actual behavior
+http://localhost:7071/permanent -> HTTP 404
+
+== Installed runtimes
+....
+dotnet --info
+.NET Core SDK (reflecting any global.json):
+ Version:   3.1.100
+ Commit:    cd82f021f4
+
+Runtime Environment:
+ OS Name:     Mac OS X
+ OS Version:  10.14
+ OS Platform: Darwin
+ RID:         osx.10.14-x64
+ Base Path:   /usr/local/share/dotnet/sdk/3.1.100/
+
+Host (useful for support):
+  Version: 3.1.0
+  Commit:  65f04fb6db
+
+.NET Core SDKs installed:
+  2.2.105 [/usr/local/share/dotnet/sdk]
+  2.2.207 [/usr/local/share/dotnet/sdk]
+  3.0.101 [/usr/local/share/dotnet/sdk]
+  3.1.100 [/usr/local/share/dotnet/sdk]
+
+.NET Core runtimes installed:
+  Microsoft.AspNetCore.All 2.2.3 [/usr/local/share/dotnet/shared/Microsoft.AspNetCore.All]
+  Microsoft.AspNetCore.All 2.2.8 [/usr/local/share/dotnet/shared/Microsoft.AspNetCore.All]
+  Microsoft.AspNetCore.App 2.2.3 [/usr/local/share/dotnet/shared/Microsoft.AspNetCore.App]
+  Microsoft.AspNetCore.App 2.2.8 [/usr/local/share/dotnet/shared/Microsoft.AspNetCore.App]
+  Microsoft.AspNetCore.App 3.0.1 [/usr/local/share/dotnet/shared/Microsoft.AspNetCore.App]
+  Microsoft.AspNetCore.App 3.1.0 [/usr/local/share/dotnet/shared/Microsoft.AspNetCore.App]
+  Microsoft.NETCore.App 2.2.3 [/usr/local/share/dotnet/shared/Microsoft.NETCore.App]
+  Microsoft.NETCore.App 2.2.8 [/usr/local/share/dotnet/shared/Microsoft.NETCore.App]
+  Microsoft.NETCore.App 3.0.1 [/usr/local/share/dotnet/shared/Microsoft.NETCore.App]
+  Microsoft.NETCore.App 3.1.0 [/usr/local/share/dotnet/shared/Microsoft.NETCore.App]
+
+To install additional .NET Core runtimes or SDKs:
+  https://aka.ms/dotnet-download
+....
+
