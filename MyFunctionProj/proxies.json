@@ -12,17 +12,12 @@
         "response.headers.Location": "https://docs.microsoft.com/"
       }
     },
-    "temporary redirect": {
+    "root redirect": {
       "matchCondition": {
-        "methods": [
-          "GET"
-        ],
-        "route": "/temporary"
+          "methods": [ "GET" ],
+          "route": "/"
       },
-      "responseOverrides": {
-        "response.statusCode": "302",
-        "response.headers.Location": "https://dosc.microsoft.com/"
-      }
-    }
+      "backendUri": "http://localhost:7071"
+  }
   }
 }

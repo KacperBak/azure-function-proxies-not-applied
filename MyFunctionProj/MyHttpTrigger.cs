@@ -29,5 +29,15 @@ namespace MyFunctionProj
                 ? (ActionResult)new OkObjectResult($"Hello, {name}")
                 : new BadRequestObjectResult("Please pass a name on the query string or in the request body");
         }
+
+        [FunctionName("Bad")]
+        public static async Task<IActionResult> Bad(
+            [HttpTrigger(AuthorizationLevel.Function, "get", "post", Route = null)] HttpRequest req,
+            ILogger log)
+        {
+            string message = "Bad request";
+            log.LogInformation(message);
+            return new BadRequestObjectResult(message);
+        }
     }
 }
